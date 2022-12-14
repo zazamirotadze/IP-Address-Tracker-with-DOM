@@ -1,26 +1,24 @@
 
 let ip = ""
 
-function initialFetch(){
-    fetch("https://jsonip.com/")
-    .then((response) => response.json())
-    .then((data) =>{ip=data.ip})
 
-    setTimeout(()=>{
-        fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_HjOp99VR0QnmxhSYM2SSm69KJ5U7X&ipAddress=${ip}`)
-        .then((response) => response.json())
-        .then((data) =>{ 
-            document.getElementById("ip-data").innerHTML = data.ip
-            document.getElementById("location-data").innerHTML = data.location.city
-            document.getElementById("utc-data").innerHTML = data.location.timezone
-            document.getElementById("isp-data").innerHTML = data.isp
-            if(data.code===undefined) {
-                updateMarker(data.location.lat, data.location.lng)
-            }else{
-                alert("please enter  correct ip")
-            }
-        });
-    },100)
+
+
+
+function initialFetch(){
+    fetch("https://ipapi.co/json/")
+    .then((response) => response.json())
+    .then((data) =>{ 
+        document.getElementById("ip-data").innerHTML = data.ip
+        document.getElementById("location-data").innerHTML = data.city
+        document.getElementById("utc-data").innerHTML = data.utc_offset
+        document.getElementById("isp-data").innerHTML = data.org
+        if(data.code===undefined) {
+            updateMarker(data.latitude, data.longitude)
+        }else{
+            alert("please enter  correct ip")
+        }
+    });
 
 }
 
