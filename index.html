@@ -6,6 +6,12 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="index.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
   integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
   crossorigin=""/>
@@ -34,21 +40,26 @@
  
  
   
-  <div class="header-div" >IP Address Tracker</div>
+  <div class="header-div" ><h2>IP Address Tracker</h2></div>
   <div class="input-div" >
-    <input type="text" placeholder="Search for any IP address or domain" id="myInput"/>
-    <button type="button" onclick="getInputValue();">Get Value</button>
+     <input type="text" placeholder="Search for any IP address or domain" id="myInput">
+      <button type="button" onclick="getInputValue();"></button>
+    </input>
+    
   </div>
-  <div class="info-div" >
-    <div><h4>IP Address</h4><div id="ip-data"></div></div>
-    <div><h4>Location</h4><div id="location-data"></div></div>
-    <div><h4>UTC</h4><div id="utc-data"></div></div>
-    <div><h4>ISP</h4><div id="isp-data"></div></div>
+  <div class="info-map-div">
+    <div class="info-div" >
+      <div><h4>IP Address</h4><h2 id="ip-data"></h2></div>
+      <div><h4>Location</h4><h2 id="location-data"></h2></div>
+      <div><h4>UTC</h4><h2 id="utc-data"></h2></div>
+      <div><h4>ISP</h4><h2 id="isp-data"></h2></div>
+    </div>
+    <div id="map"></div>
   </div>
-  <div id="map"></div>
+
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Zaza Mirotadze</a>.
   </div>
 </body>
 <script src="index.js" defer ></script>
